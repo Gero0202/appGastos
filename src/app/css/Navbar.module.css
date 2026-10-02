@@ -1,0 +1,66 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: rgba(18, 18, 22, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.tabButton {
+  background: transparent;
+  border: none;
+  color: #71717a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  flex: 1;
+  height: 100%;
+  padding: 8px 0;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s ease;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabButton:active {
+  transform: scale(0.92);
+}
+
+.icon {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.active {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.active .icon {
+  transform: translateY(-1px);
+}
+
+/* Indicador de pestaña activa superior */
+.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #3b82f6;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+}

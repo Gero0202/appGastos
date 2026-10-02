@@ -1,0 +1,300 @@
+.container {
+  padding: 16px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header principal */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(245, 158, 11, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.titleWrapper h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Picker de fecha estilizado */
+.dateSelector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 6px 10px;
+  gap: 6px;
+}
+
+.dateIcon {
+  color: #a1a1aa;
+  pointer-events: none;
+}
+
+.dateInput {
+  background: transparent;
+  border: none;
+  color: #f4f4f5;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+/* Formulario */
+.formCard {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputsRow {
+  display: flex;
+  gap: 10px;
+}
+
+.inputDesc {
+  flex: 1.6;
+  background-color: #0f0f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.inputDesc:focus {
+  border-color: #f59e0b;
+}
+
+.amountWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currencyPrefix {
+  position: absolute;
+  left: 12px;
+  color: #71717a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.inputAmount {
+  width: 100%;
+  background-color: #0f0f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 12px 12px 12px 26px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.inputAmount:focus {
+  border-color: #f59e0b;
+}
+
+.addBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #000000;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.addBtn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Banner Diario */
+.dailyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(245, 158, 11, 0.08);
+  border: 1px dashed rgba(245, 158, 11, 0.25);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.dailyLabel {
+  color: #d4d4d8;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dayTotalVal {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Lista de ítems */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  color: #52525b;
+  text-align: center;
+  gap: 8px;
+}
+
+.emptyIcon {
+  color: #3f3f46;
+}
+
+.emptyState p {
+  font-size: 0.85rem;
+}
+
+.itemCard {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.expenseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  flex-shrink: 0;
+}
+
+.itemDesc {
+  color: #f4f4f5;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.itemAmount {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: #71717a;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.deleteBtn:active {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Banner inferior de total mensual */
+.monthTotalBanner {
+  background-color: #1a1a24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.monthInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.trendingIcon {
+  color: #ef4444;
+}
+
+.monthTotalVal {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.15rem;
+}

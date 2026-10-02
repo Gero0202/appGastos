@@ -1,0 +1,326 @@
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerTitle h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  color: #71717a;
+  display: block;
+}
+
+/* Formulario */
+.form {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .inputsRow {
+    flex-direction: row;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: #71717a;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  background-color: #0f0f14;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 10px 12px 10px 36px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+}
+
+.submitBtn {
+  flex: 1;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+.cancelBtn {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Listado de items */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emptyState {
+  text-align: center;
+  color: #71717a;
+  font-size: 0.85rem;
+  padding: 24px;
+  background-color: #16161e;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.itemCard {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.paidCard {
+  opacity: 0.65;
+  background-color: rgba(22, 22, 30, 0.5);
+}
+
+.checkBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkIconActive {
+  color: #10b981;
+}
+
+.checkIconInactive {
+  color: #52525b;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.itemTitle {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #a1a1aa;
+}
+
+.itemAmount {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: #71717a;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.actionBtn:active {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.deleteBtn:active {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Footer & Resumen */
+.summaryFooter {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #a1a1aa;
+  font-weight: 500;
+}
+
+.progressPercent {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: #0f0f14;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.footerDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 10px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footerLabel {
+  color: #94a3b8;
+}
+
+.paidText {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.totalRow {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.totalText {
+  color: #ef4444;
+}

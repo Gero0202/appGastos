@@ -1,0 +1,288 @@
+.container {
+  padding: 16px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #71717a;
+  display: block;
+  margin-top: 2px;
+}
+
+.editBtn {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #3b82f6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.editBtn:active {
+  transform: scale(0.95);
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.activeCancel {
+  color: #ef4444;
+}
+
+/* Loading */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #71717a;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: #3b82f6;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard Wrapper */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Hero Card - Disponible Restante */
+.heroCard {
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroPositive {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.heroNegative {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.08) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.heroHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.heroPositive .heroBadge {
+  color: #34d399;
+}
+
+.heroNegative .heroBadge {
+  color: #f87171;
+}
+
+.heroValue {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.heroSubtext {
+  font-size: 0.78rem;
+  color: #a1a1aa;
+}
+
+/* Grilla de tarjetas (2 columnas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardLabel {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.iconBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.savingsIcon {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.totalIcon {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.dailyIcon {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+.fixedIcon {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.cardValue {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.savingsValue {
+  color: #34d399;
+}
+
+.dailyValue {
+  color: #f59e0b;
+}
+
+.fixedValue {
+  color: #f87171;
+}
+
+/* Formulario de Edición */
+.editForm {
+  background-color: #16161e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldGroup label {
+  font-size: 0.82rem;
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fieldIcon {
+  color: #3b82f6;
+}
+
+.fieldGroup input {
+  background-color: #0f0f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.fieldGroup input:focus {
+  border-color: #3b82f6;
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.saveBtn:active {
+  transform: scale(0.98);
+}
