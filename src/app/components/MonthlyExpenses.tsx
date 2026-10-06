@@ -14,6 +14,7 @@ import {
   Check,
 } from 'lucide-react';
 import { supabase } from '@/app/lib/supabase';
+import { useAuth } from '../contexts/AuthContext';
 import { MonthlyExpense } from '@/app/types/finance';
 import styles from '@/app/css/MonthlyExpenses.module.css';
 
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export default function MonthlyExpenses({ onTotalChange }: Props) {
+  const { user } = useAuth();
   const [items, setItems] = useState<MonthlyExpense[]>([]);
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
@@ -71,7 +73,14 @@ export default function MonthlyExpenses({ onTotalChange }: Props) {
     } else {
       const { data, error } = await supabase
         .from('monthly_expenses')
-        .insert([{ title: title.trim(), amount: numericAmount, is_paid: false }])
+        .insert([
+          {
+            title: title.trim(),
+            amount: numericAmount,
+            is_paid: false,
+            user_id: user?.id,
+          },
+        ])
         .select()
         .single();
 

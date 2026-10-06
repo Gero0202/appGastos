@@ -13,6 +13,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { supabase } from '@/app/lib/supabase';
+import { useAuth } from '../contexts/AuthContext';
 import { GeneralData } from '@/app/types/finance';
 import styles from '@/app/css/GeneralSumary.module.css';
 
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props) {
+  const { user } = useAuth();
   const [generalData, setGeneralData] = useState<GeneralData>({ ahorros: 0, plata_total: 0 });
   const [isEditing, setIsEditing] = useState(false);
   const [ahorrosInput, setAhorrosInput] = useState('0');

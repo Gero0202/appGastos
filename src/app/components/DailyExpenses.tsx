@@ -10,6 +10,7 @@ import {
   TrendingDown,
 } from 'lucide-react';
 import { supabase } from '@/app/lib/supabase';
+import { useAuth } from '../contexts/AuthContext';
 import { DailyExpense } from '@/app/types/finance';
 import styles from '@/app/css/DailyExpenses.module.css';
 
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export default function DailyExpenses({ onMonthTotalChange }: Props) {
+  const { user } = useAuth();
   const [expenses, setExpenses] = useState<DailyExpense[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>(
     new Date().toISOString().split('T')[0]
@@ -59,6 +61,7 @@ export default function DailyExpenses({ onMonthTotalChange }: Props) {
           description,
           amount: numericAmount,
           date: selectedDate,
+          user_id: user?.id
         },
       ])
       .select()
