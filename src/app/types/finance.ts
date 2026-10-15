@@ -2,6 +2,7 @@ export interface GeneralData {
   id?: string;
   ahorros: number;
   plata_total: number;
+  invertido: number;
 }
 
 export interface MonthlyExpense {

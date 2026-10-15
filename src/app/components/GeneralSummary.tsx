@@ -11,6 +11,7 @@ import {
   X,
   Check,
   Loader2,
+  TrendingUp,
 } from 'lucide-react';
 import { supabase } from '@/app/lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
@@ -24,7 +25,8 @@ interface Props {
 
 export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props) {
   const { user } = useAuth();
-  const [generalData, setGeneralData] = useState<GeneralData>({ ahorros: 0, plata_total: 0 });
+  const [generalData, setGeneralData] = useState<GeneralData>({ ahorros: 0, plata_total: 0, invertido: 0 });
+  const [invertidoInput, setInvertidoInput] = useState('0');
   const [isEditing, setIsEditing] = useState(false);
   const [ahorrosInput, setAhorrosInput] = useState('0');
   const [plataInput, setPlataInput] = useState('0');
@@ -42,6 +44,7 @@ export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props)
       setGeneralData(data);
       setAhorrosInput(data.ahorros.toString());
       setPlataInput(data.plata_total.toString());
+      setInvertidoInput((data.invertido || 0).toString());
     }
     setLoading(false);
   };
@@ -50,14 +53,15 @@ export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props)
     e.preventDefault();
     const newAhorros = parseFloat(ahorrosInput) || 0;
     const newPlata = parseFloat(plataInput) || 0;
+    const newInvertido = parseFloat(invertidoInput) || 0;
 
     const { error } = await supabase
       .from('general_data')
-      .update({ ahorros: newAhorros, plata_total: newPlata, updated_at: new Date().toISOString() })
+      .update({ ahorros: newAhorros, plata_total: newPlata, invertido: newInvertido, updated_at: new Date().toISOString() })
       .eq('id', generalData.id);
 
     if (!error) {
-      setGeneralData({ ...generalData, ahorros: newAhorros, plata_total: newPlata });
+      setGeneralData({ ...generalData, ahorros: newAhorros, plata_total: newPlata, invertido: newInvertido });
       setIsEditing(false);
     }
   };
@@ -136,6 +140,20 @@ export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props)
             />
           </div>
 
+          <div className={styles.fieldGroup}>
+            <label>
+              <TrendingUp size={16} className={styles.fieldIcon} />
+              <span>Invertido Total ($)</span>
+            </label>
+            <input
+              type="number"
+              value={invertidoInput}
+              onChange={(e) => setInvertidoInput(e.target.value)}
+              placeholder="0"
+              required
+            />
+          </div>
+
           <button type="submit" className={styles.saveBtn}>
             <Check size={18} />
             <span>Guardar Cambios</span>
@@ -145,9 +163,8 @@ export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props)
         <div className={styles.dashboard}>
           {/* Tarjeta Hero: Disponible Restante */}
           <div
-            className={`${styles.heroCard} ${
-              disponibleReal < 0 ? styles.heroNegative : styles.heroPositive
-            }`}
+            className={`${styles.heroCard} ${disponibleReal < 0 ? styles.heroNegative : styles.heroPositive
+              }`}
           >
             <div className={styles.heroHeader}>
               <div className={styles.heroBadge}>
@@ -210,6 +227,20 @@ export default function GeneralSummary({ monthlyTotal, dailyTotalMonth }: Props)
                 {formatCurrency(monthlyTotal)}
               </span>
             </div>
+
+            {/* Invertido */}
+            <div className={styles.card}>
+              <div className={styles.cardTop}>
+                <span className={styles.cardLabel}>Invertido</span>
+                <div className={`${styles.iconBadge} ${styles.investmentIcon}`}>
+                  <TrendingUp size={18} />
+                </div>
+              </div>
+              <span className={`${styles.cardValue} ${styles.investmentValue}`}>
+                {formatCurrency(generalData.invertido || 0)}
+              </span>
+            </div>
+
           </div>
         </div>
       )}

@@ -201,11 +201,26 @@
   color: #ef4444;
 }
 
+/* Agrega estos dos bloques debajo de .fixedIcon y .fixedValue */
+
+.investmentIcon {
+  background-color: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+
+
+
+
 .cardValue {
   font-size: 1.15rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.02em;
+}
+
+.investmentValue {
+  color: #c084fc;
 }
 
 .savingsValue {
